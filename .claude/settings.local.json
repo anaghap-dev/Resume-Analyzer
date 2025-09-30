@@ -7,7 +7,13 @@
       "Bash(npm install)",
       "Bash(npm run dev:*)",
       "Bash(npm start)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
