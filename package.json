@@ -1,0 +1,23 @@
+{
+  "name": "resume-analyzer",
+  "version": "1.0.0",
+  "description": "A full-stack resume analyzer application",
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-client && npm run install-server",
+    "build": "npm run install-all && npm run build-client",
+    "start": "cd server && npm start",
+    "start-server": "cd server && npm start",
+    "start-client": "cd client && npm start",
+    "dev": "cd client && set PORT=5173 && npm start",
+    "dev-server": "cd server && npm run dev",
+    "build-client": "cd client && npm run build"
+  },
+  "keywords": ["resume", "analyzer", "ai", "job", "matching"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
