@@ -13,9 +13,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, '../client/build')));
-
 app.use('/api', feedbackRoute);
 
 app.post('/parse', upload.single('resume'), async (req, res) => {
@@ -48,11 +45,6 @@ app.post('/analyze', (req, res) => {
         matchScore: score,
         matchedKeywords: [...new Set(matched)],
     });
-});
-
-// Catch-all handler: send back React's index.html file for any non-API routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.listen(PORT, () => {
