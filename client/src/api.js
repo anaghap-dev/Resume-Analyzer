@@ -1,6 +1,4 @@
-const BASE_URL = process.env.NODE_ENV === 'production'
-  ? '' // Use relative URLs in production (same domain as the server)
-  : 'http://localhost:5000';
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 export const parseResume = async (formData) => {
   const res = await fetch(`${BASE_URL}/parse`, {
@@ -20,7 +18,7 @@ export const analyzeResume = async ({ parsedText, jobDescription }) => {
 };
 
 export const getAIFeedback = async ({ resumeText, jobDescription }) => {
-  const res = await fetch(`${BASE_URL}/generate-feedback`, {
+  const res = await fetch(`${BASE_URL}/api/generate-feedback`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ resumeText, jobDescription }),
